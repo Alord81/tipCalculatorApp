@@ -1,0 +1,116 @@
+:root {
+    --background: #c6e4e7;
+    --background-box:#ffffff;
+    --font-title-color: #406264;
+    --number-color: hsl(172, 67%, 45%);
+    --input-background: #f4fafa;
+    --placeholder:#7f9c9f;
+}
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input {
+    font-family: 'Space Mono', monospace;
+    text-align: end;
+    padding: 10px 10px;
+    outline: none;
+    border: 2px solid transparent;
+    background-color: var(--input-background);
+    border-radius: 5px;
+}
+input:focus {
+    border-color: var(--number-color);
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+}
+
+.container {
+    background-color: var(--background);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 95%;
+}
+
+.container > div > div:first-child {
+    flex: 1;
+    padding-top: 50px;
+    height: fit-content;
+    text-align: center;
+}
+.container > div > div:first-child > .title {
+    margin-top: 70px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 6px;
+    color: var(--font-title-color);
+}
+.container > div > div:first-child > div:last-child {
+    background-color: var(--background-box);
+    padding: 40px;
+    border-radius: 20px;
+}
+.container > div > div:first-child > div:last-child .box {
+    display: flex;
+    text-align: start;
+    gap: 50px;
+}
+.container > div > div:first-child > div:last-child .box > .bill-info {
+    width: 300px;
+}
+.container > div > div:first-child > div:last-child .box > .bill-info form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.bill-info form .bill,
+.bill-info form .number-of-people {
+    display: flex;
+    flex-direction: column;
+}
+.bill-info form .bill div,
+.bill-info form .number-of-people div:last-child {
+    position: relative;
+}
+.bill-info form .bill label,
+.number-of-people div > label {
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.bill-info form .bill div img,
+.bill-info form .number-of-people div:last-child img {
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    transform: translate(-93%,-50%);
+    width: 10px;
+}
+.bill-info form .bill input,
+.bill-info form .number-of-people input {
+    width: 100%;
+}
+.bill-info form .bill input::placeholder,
+.bill-info form .number-of-people input::placeholder {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--placeholder);
+}
