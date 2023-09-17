@@ -25,77 +25,78 @@
     <div>
       <div>
         <!-- Title -->
-        <div>
+        <div class="title">
           <h1>splt</h1>
           <h1>tter</h1>
         </div>
         <!--// Title //-->
-
-        <!-- Box -->
-        <div class="box">
-          <section class="bill-info">
-            <form>
-              <!-- Bill Number -->
-              <div class="bill">
-                <label>Bill</label>
+        <div>
+          <!-- Box -->
+          <div class="box">
+            <section class="bill-info">
+              <form>
+                <!-- Bill Number -->
+                <div class="bill">
+                  <label>Bill</label>
+                  <div>
+                    <img src="/images/icon-dollar.svg" alt="">
+                    <input type="number" placeholder="0">
+                  </div>
+                </div>
+                <!--// Bill Number //-->
+                <!-- Tips -->
+                <div class="the-tips">
+                  <label>Select Tip %</label>
+                  <div class="tips">
+                    <button>5%</button>
+                    <button>10%</button>
+                    <button>15%</button>
+                    <button>25%</button>
+                    <button>50%</button>
+                    <input id="custom" type="number" placeholder="Custom">
+                  </div>
+                </div>
+                <!--// Tips //-->
+                <!-- Number of People -->
+                <div class="number-of-people">
+                  <div>
+                    <label>Number of People</label>
+                    <span class="error"></span>
+                  </div>
+                  <div>
+                    <img src="/images/icon-person.svg" alt="">
+                    <input type="number" placeholder="0">
+                  </div>
+                </div>
+                <!--// Number of People //-->
+              </form>
+            </section>
+            <section class="result">
+              <!-- Tip Amount -->
+              <div class="tip-amount">
                 <div>
-                  <img src="/images/icon-dollar.svg" alt="">
-                  <input type="number" placeholder="0">
+                  <h4>Tip Amount</h4>
+                  <h5>/ person</h5>
                 </div>
+                <h2 class="output-of-tip-amount">0</h2>
               </div>
-              <!--// Bill Number //-->
-              <!-- Tips -->
-              <div class="the-tips">
-                <label>Select Tip %</label>
-                <div class="tips">
-                  <button>5%</button>
-                  <button>10%</button>
-                  <button>15%</button>
-                  <button>25%</button>
-                  <button>50%</button>
-                  <input id="custom" type="number" placeholder="Custom">
-                </div>
-              </div>
-              <!--// Tips //-->
-              <!-- Number of People -->
-              <div class="number-of-people">
+              <!--// Tip Amount //-->
+              <!-- Total -->
+              <div class="total">
                 <div>
-                  <label>Number of People</label>
-                  <span class="error"></span>
+                  <h4>Total</h4>
+                  <h5>/ person</h5>
                 </div>
-                <div>
-                  <img src="/images/icon-person.svg" alt="">
-                  <input type="number" placeholder="0">
-                </div>
+                <h2 class="output-of-total">0</h2>
               </div>
-              <!--// Number of People //-->
-            </form>
-          </section>
-          <section class="result">
-            <!-- Tip Amount -->
-            <div class="tip-amount">
-              <div>
-                <h4>Tip Amount</h4>
-                <h5>/ person</h5>
-              </div>
-              <h2 class="output-of-tip-amount">0</h2>
-            </div>
-            <!--// Tip Amount //-->
-            <!-- Total -->
-            <div class="total">
-              <div>
-                <h4>Total</h4>
-                <h5>/ person</h5>
-              </div>
-              <h2 class="output-of-total">0</h2>
-            </div>
-            <!--// Total //-->
-            <!-- Reset -->
-            <button id="reset">Reset</button>
-            <!--// Reset //-->
-          </section>
+              <!--// Total //-->
+              <!-- Reset -->
+              <button id="reset">Reset</button>
+              <!--// Reset //-->
+            </section>
+          </div>
+          <!--// Box //-->
         </div>
-        <!--// Box //-->
       </div>
     
 
