@@ -2,9 +2,12 @@
     --background: #c6e4e7;
     --background-box:#ffffff;
     --font-title-color: #406264;
-    --number-color: hsl(172, 67%, 45%);
+    --number-color: #26c0ab;
     --input-background: #f4fafa;
     --placeholder:#7f9c9f;
+    --label-color:#5e7a7d;
+    --btn: #00494d;
+    --transition: .4s;
 }
 * {
     margin: 0;
@@ -24,6 +27,10 @@ input {
     border: 2px solid transparent;
     background-color: var(--input-background);
     border-radius: 5px;
+
+    color: var(--font-title-color);
+    font-size: 17px;
+    font-weight: bold;
 }
 input:focus {
     border-color: var(--number-color);
@@ -56,7 +63,7 @@ body {
     text-align: center;
 }
 .container > div > div:first-child > .title {
-    margin-top: 70px;
+    margin-top: 20px;
     margin-bottom: 50px;
     text-transform: uppercase;
     font-size: 10px;
@@ -90,11 +97,60 @@ body {
 .bill-info form .number-of-people div:last-child {
     position: relative;
 }
-.bill-info form .bill label,
-.number-of-people div > label {
+.bill-info form .number-of-people > div:first-child{
+    display: flex;
+    justify-content: space-between;
+}
+.the-tips {
+    display: flex;
+    flex-direction: column;
+}
+.the-tips .tips {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+.the-tips .tips button {
+    padding: 8px 25px;
+    color: white;
+    background-color: var(--btn);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.2rem;
     font-weight: 700;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.the-tips .tips button:hover {
+    color: var(--btn);
+    background-color: var(--number-color);
+}
+.the-tips .tips input {
+    height: 35px;
+    width: 90px;
+    /* padding: 8px 25px; */
+    text-align: start;
+}
+.the-tips .tips input::placeholder {
+    font-family: 'Space Mono', monospace;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.bill-info form .bill label,
+label.n-p,
+.the-tips label {
+    font-weight: bold;
     font-size: 13px;
     margin-bottom: 10px;
+    color: var(--label-color);
 }
 .bill-info form .bill div img,
 .bill-info form .number-of-people div:last-child img {
@@ -114,3 +170,59 @@ body {
     font-weight: 700;
     color: var(--placeholder);
 }
+
+.error {
+    font-size: 11px;
+    color: red;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Space Mono', monospace;
+    color: var(--font-title-color);
+    font-size: 17px;
+    font-weight: bold;
+}
+
+input.error {
+    border-color:red;
+}
+
+
+/* Result */
+.result {
+    background-color: #00494d;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    width: 300px;
+    text-align: start;
+    padding:25px 40px;
+    border-radius: 15px;
+}
+.result > div {
+    display: flex;
+    justify-content: space-between;
+}
+.result > div h5 {
+    color: var(--background);
+    font-size: 11px;
+    margin-top: 5px;
+}
+.result > div h2 {
+    font-size: 30px;
+    color: var(--number-color);
+}
+.result > button {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--btn);
+    background-color: var(--number-color);
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    padding: 5px 15px;
+    margin-top: 60px;
+    flex: 1;
+}
+/*--- Result ---*/
