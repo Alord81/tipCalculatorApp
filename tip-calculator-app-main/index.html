@@ -6,19 +6,13 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"> -->
   
   <title>Frontend Mentor | Tip calculator app</title>
 
   <link rel="stylesheet" href="style.css">
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
   <div class="container">
@@ -34,42 +28,40 @@
           <!-- Box -->
           <div class="box">
             <section class="bill-info">
-              <form>
-                <!-- Bill Number -->
-                <div class="bill">
-                  <label>Bill</label>
-                  <div>
-                    <img src="/images/icon-dollar.svg" alt="">
-                    <input type="number" placeholder="0">
-                  </div>
+              <!-- Bill Number -->
+              <div class="bill">
+                <label>Bill</label>
+                <div>
+                  <img src="/images/icon-dollar.svg" alt="">
+                  <input type="number" placeholder="0" id="bill">
                 </div>
-                <!--// Bill Number //-->
-                <!-- Tips -->
-                <div class="the-tips">
-                  <label>Select Tip %</label>
-                  <div class="tips">
-                    <button>5%</button>
-                    <button>10%</button>
-                    <button>15%</button>
-                    <button>25%</button>
-                    <button>50%</button>
-                    <input id="custom" type="number" placeholder="Custom">
-                  </div>
+              </div>
+              <!--// Bill Number //-->
+              <!-- Tips -->
+              <div class="the-tips">
+                <label>Select Tip %</label>
+                <div class="tips">
+                  <button class="this-tip tip-btn">5%</button>
+                  <button class="tip-btn">10%</button>
+                  <button class="tip-btn">15%</button>
+                  <button class="tip-btn">25%</button>
+                  <button class="tip-btn">50%</button>
+                  <input id="custom" type="number" placeholder="Custom">
                 </div>
-                <!--// Tips //-->
-                <!-- Number of People -->
-                <div class="number-of-people">
-                  <div>
-                    <label class="n-p">Number of People</label>
-                    <span class="error">can't be zero</span>
-                  </div>
-                  <div>
-                    <img src="/images/icon-person.svg" alt="">
-                    <input type="number" placeholder="0" class="">
-                  </div>
+              </div>
+              <!--// Tips //-->
+              <!-- Number of People -->
+              <div class="number-of-people">
+                <div>
+                  <label class="n-p">Number of People</label>
+                  <span>can't be zero</span> <!--class="error"-->
                 </div>
-                <!--// Number of People //-->
-              </form>
+                <div>
+                  <img src="/images/icon-person.svg" alt="">
+                  <input type="number" placeholder="0" class="f-n-p"> <!-- class="error"-->
+                </div>
+              </div>
+              <!--// Number of People //-->
             </section>
             <section class="result">
               <!-- Tip Amount -->
@@ -92,19 +84,16 @@
               <!--// Total //-->
               <!-- Reset -->
               <button id="reset">Reset</button>
+              <!-- class="possible" -->
               <!--// Reset //-->
             </section>
           </div>
           <!--// Box //-->
         </div>
       </div>
-    
-
-      <div class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-        Coded by <a href="#">Your Name Here</a>.
-      </div>
+  
     </div>
   </div>
 </body>
+<script src="main.js"></script>
 </html>
