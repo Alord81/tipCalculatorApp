@@ -31,6 +31,8 @@ input {
     color: var(--font-title-color);
     font-size: 17px;
     font-weight: bold;
+
+    width: 100%;
 }
 input:focus {
     border-color: var(--number-color);
@@ -82,12 +84,13 @@ body {
 }
 .container > div > div:first-child > div:last-child .box > .bill-info {
     width: 300px;
-}
-.container > div > div:first-child > div:last-child .box > .bill-info form {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
+/* .container > div > div:first-child > div:last-child .box > .bill-info form {
+
+} */
 .bill-info form .bill,
 .bill-info form .number-of-people {
     display: flex;
@@ -130,6 +133,10 @@ body {
 }
 .the-tips .tips button:hover {
     color: var(--btn);
+    background-color: hsla(172, 67%, 45%, 0.577);
+}
+.the-tips .tips button.this-tip {
+    color: var(--btn);
     background-color: var(--number-color);
 }
 .the-tips .tips input {
@@ -152,6 +159,10 @@ label.n-p,
     margin-bottom: 10px;
     color: var(--label-color);
 }
+.number-of-people > div:first-child {
+    display: flex;
+    justify-content: space-between;
+}
 .bill-info form .bill div img,
 .bill-info form .number-of-people div:last-child img {
     position: absolute;
@@ -170,18 +181,29 @@ label.n-p,
     font-weight: 700;
     color: var(--placeholder);
 }
+.number-of-people > div:last-child,
+.bill > div {
+    position: relative;
+}
+.number-of-people > div:last-child img,
+.bill > div img{
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    transform: translate(-92%, -50%);
+}
 
-.error {
+.n-p + span {
+    display: none;
+}
+.n-p + span.error {
     font-size: 11px;
     color: red;
     font-weight: bold;
     letter-spacing: 2px;
     font-family: 'Space Mono', monospace;
-    color: var(--font-title-color);
-    font-size: 17px;
-    font-weight: bold;
+    display: inline-block;
 }
-
 input.error {
     border-color:red;
 }
@@ -196,7 +218,7 @@ input.error {
     gap: 35px;
     width: 300px;
     text-align: start;
-    padding:25px 40px;
+    padding:25px 32px;
     border-radius: 15px;
 }
 .result > div {
@@ -217,12 +239,20 @@ input.error {
     font-size: 12px;
     color: var(--btn);
     background-color: var(--number-color);
-    font-weight: bold;
+    font-weight: 700;
     border: none;
     outline: none;
     border-radius: 3px;
-    padding: 5px 15px;
-    margin-top: 60px;
-    flex: 1;
+    padding: 9px 10px;
+    margin-top: 75px;
+    opacity: .2;
+    transition: var(--transition);
+}
+.result > button.possible {
+    cursor: pointer;
+    opacity: 1;
+}
+.result > button.possible:hover {
+    background-color: var(--background);
 }
 /*--- Result ---*/
