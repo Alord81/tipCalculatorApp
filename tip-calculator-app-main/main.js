@@ -4,15 +4,21 @@ custom =document.getElementById("custom"),
 span = document.querySelector('span'),
 numberPeople = document.querySelector('.f-n-p'),
 outputOfTipAmount = document.querySelector('.output-of-tip-amount'),
-outputOfTotal = document.querySelector('.output-of-total');
+outputOfTotal = document.querySelector('.output-of-total'),
+resetBtn = document.getElementById('reset');
 
-// console.log(numberPeople.value)
+let billValue,tipValue,numberPeopleValue; 
 
-let billValue,tipValue, customValue,numberPeopleValue; 
 
 bill.addEventListener('blur',() =>{
     billValue = bill.value;
-    console.log(billValue)
+    if ((numberPeople.value !== undefined && numberPeople.value !== "") && 
+    (tipValue !== undefined && tipValue !== "") && 
+    (billValue !== undefined && billValue !== "")) {
+        fillData(numberPeople,billValue,tipValue)
+    }else {
+        setData()
+    }
 })
 tipBtn.forEach((element) => {
     element.addEventListener('click',() => {
@@ -21,31 +27,84 @@ tipBtn.forEach((element) => {
         })
         element.classList.add('this-tip')
         tipValue = parseInt(element.innerHTML)
-        console.log(tipValue)
+        if ((numberPeople.value !== undefined && numberPeople.value !== "") && 
+        (tipValue !== undefined && tipValue !== "") && 
+        (billValue !== undefined && billValue !== "")) {
+            fillData(numberPeople,billValue,tipValue)    
+        }else {
+            setData()
+        }
     })
 })
 custom.addEventListener('blur',() =>{
-    // if(custom.value === '') {
-    //     document.querySelector('span').classList.add('error')
-    //     document.querySelector('.f-n-p').classList.add('error')
-    // }else {
-    //     customValue = custom.value;
-    //     console.log(customValue)
-    // }
-    customValue = custom.value;
-    console.log(customValue)
+
+    tipValue = custom.value;
+
+    if ((numberPeople.value !== undefined && numberPeople.value !== "") && 
+    (tipValue !== undefined && tipValue !== "") && 
+    (billValue !== undefined && billValue !== "")) {
+        fillData(numberPeople,billValue,tipValue)
+    }else {
+        setData()
+    }
+    if(tipValue === '') {
+        tipBtn[0].classList.add('this-tip')
+    }
+})
+custom.addEventListener("click",()=>{
+    tipBtn.forEach((element) => {
+        element.classList.remove('this-tip')
+    })
 })
 
 numberPeople.addEventListener('blur',() => {
-    if(numberPeople.value === '') {
-        span.classList.add('error')
-        numberPeople.classList.add('error')
+    if ((numberPeople.value !== undefined && numberPeople.value !== "") && 
+    (tipValue !== undefined && tipValue !== "") && 
+    (billValue !== undefined && billValue !== "")) {
+        if(numberPeople.value !== '0') {
+            span.classList.remove('error')
+            numberPeople.classList.remove('error')
+            fillData(numberPeople,billValue,tipValue)
+        } else {
+            span.classList.add('error')
+            numberPeople.classList.add('error') 
+        }
+    }
+})
+
+function fillData(numv,billv,tipv) {
+    numberPeopleValue = numv.value;
+    tipAmount= ((billv * (tipv/100)) / numberPeopleValue).toFixed(2)
+    outputOfTipAmount.innerHTML = `$${tipAmount}`
+    outputOfTotal.innerHTML = "$" + ((billv / numberPeopleValue) + +tipAmount).toFixed(2)
+    resetBtn.classList.add("possible")
+
+}
+
+function setData() {
+    outputOfTipAmount.innerHTML = "$0.00"
+    outputOfTotal.innerHTML = "$0.00"
+    resetBtn.classList.remove("possible")
+}
+function resetData() {
+    setData()
+    bill.value = undefined
+    custom.value = undefined
+    tipBtn[0].classList.add("this-tip")
+    tipBtn.forEach((element) => {
+        element.classList.remove('this-tip')
+    })
+    numberPeople.value = undefined
+    numberPeopleValue === "undefined"
+    tipValue === undefined
+    billValue === undefined
+}
+
+
+resetBtn.addEventListener("click",()=>{
+    if(resetBtn.classList.item("possible") === null) {
+
     }else {
-        numberPeopleValue = numberPeople.value;
-        console.log(numberPeopleValue)
-        tipAmount= ((billValue * (tipValue/100)) / numberPeopleValue).toFixed(2)
-        outputOfTipAmount.innerHTML = `$${tipAmount}`
-        console.log(tipAmount)
-        outputOfTotal.innerHTML = "$" + ((billValue / numberPeopleValue) + +tipAmount).toFixed(2)
+        resetData()
     }
 })
