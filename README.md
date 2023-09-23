@@ -1,6 +1,0 @@
-# tipCalculatorApp
-
-zcxzc
-czxccz
-
-zczczxcz
