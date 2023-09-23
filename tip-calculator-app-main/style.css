@@ -50,6 +50,11 @@ body {
     justify-content: center;
     align-items: center;
 }
+@media (max-width:560px) {
+    .container {
+        height: 100%;
+    }
+}
 .container > div {
     display: flex;
     flex-direction: column;
@@ -77,10 +82,39 @@ body {
     padding: 40px;
     border-radius: 20px;
 }
+@media (max-width:740px) {
+    .container > div > div:first-child > div:last-child {
+        width: fit-content;
+        margin: auto;
+    }
+}
+@media (max-width:600px) {
+    .container > div > div:first-child > div:last-child {
+        padding: 20px;
+    }
+}
+@media (max-width:560px) {
+    .container > div > div:first-child > div:last-child {
+        padding: 30px;
+    }
+}
+
 .container > div > div:first-child > div:last-child .box {
     display: flex;
     text-align: start;
     gap: 50px;
+}
+@media (max-width:740px) {
+    .container > div > div:first-child > div:last-child .box {
+        display: flex;
+        text-align: start;
+        gap: 20px;
+    }
+}
+@media (max-width:560px) {
+    .container > div > div:first-child > div:last-child .box {
+        flex-direction: column;
+    }
 }
 .container > div > div:first-child > div:last-child .box > .bill-info {
     width: 300px;
@@ -88,9 +122,12 @@ body {
     flex-direction: column;
     gap: 30px;
 }
-/* .container > div > div:first-child > div:last-child .box > .bill-info form {
+@media (max-width:740px) {
+    .container > div > div:first-child > div:last-child .box > .bill-info {
+        width: 250px;
+    }
+}
 
-} */
 .bill-info form .bill,
 .bill-info form .number-of-people {
     display: flex;
@@ -131,6 +168,11 @@ body {
     cursor: pointer;
     transition: var(--transition);
 }
+@media (max-width:740px) {
+    .the-tips .tips button {
+        width: 70px;
+    }
+}
 .the-tips .tips button:hover {
     color: var(--btn);
     background-color: hsla(172, 67%, 45%, 0.577);
@@ -142,8 +184,12 @@ body {
 .the-tips .tips input {
     height: 35px;
     width: 90px;
-    /* padding: 8px 25px; */
     text-align: start;
+}
+@media (max-width:740px) {
+    .the-tips .tips input {
+        width: 70px;
+    }
 }
 .the-tips .tips input::placeholder {
     font-family: 'Space Mono', monospace;
@@ -220,6 +266,12 @@ input.error {
     text-align: start;
     padding:25px 32px;
     border-radius: 15px;
+}
+@media (max-width:740px) {
+    .result {
+        width: 250px;
+        padding:25px 25px;
+    }
 }
 .result > div {
     display: flex;
